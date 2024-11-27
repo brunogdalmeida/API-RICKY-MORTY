@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Icon-->
+    <link rel="icon" href="./assets/img/favicon-32x32.png" type="image/x-icon">
+    <title>Rick and Morty API - Avaliação Final Modulo Front End III</title>
+    <!--Bootstrap css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark text-light vh-100">
+
+    <header class="container-fluid bg-light py-4">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-auto">
+                <a href="index.html">
+                    <img src="./assets/img/RICK_MORTY_ICON.png" alt="Logotipo Rick and Morty" class="logo-header">
+                </a>
+            </div>
+
+            <div class="col text-center">
+                <a href="index.html"  class="no-underline">
+                    <h1 class="text-success fw-bold display-6">API de Rick and Morty</h1>
+                </a>
+                <form class="mt-3 position-relative mx-auto" style="max-width: 400px;">
+                    <input type="search" id="search" class="form-control rounded-pill pe-5"
+                        placeholder="Pesquise por personagens...">
+                    <button id="search-btn" type="button">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+                <div id="message-container" class="my-3"></div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container my-5" id="characters-section">
+
+        <section id="results" class="row g-4">
+
+        </section>
+
+        <section id="image-section" class="row justify-content-center my-5">
+            <div class="col-md-12 text-center">
+                <img src="./assets/img/rickandmorty.png" alt="Rick and Morty" class="img-fluid rounded">
+            </div>
+        </section>
+
+        <section id="pagination-section" class="row my-3">
+            <div class="col-12">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+    </main>
+
+<!-- Modal -->
+<section>
+    <div class="modal fade" id="characterModal" tabindex="-1" aria-labelledby="characterModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title text-success fw-bold" id="characterModalLabel">Informações do Personagem</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center" id="modal-details">
+                    <!-- Detalhes do personagem serão preenchidos aqui -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>      
+    <footer class="container-fluid bg-black text-center mt-5 py-4">
+        <div class="container">
+            <div class="row text-success fw-bold">
+                <div class="col-md-4">
+                    <p>PERSONAGENS: 826</p>
+                </div>
+                <div class="col-md-4">
+                    <p>LOCALIZAÇÕES: 126</p>
+                </div>
+                <div class="col-md-4">
+                    <p>EPISÓDIOS: 51</p>
+                </div>
+            </div>
+            <hr class="text-success my-3">
+            <p class="text-success mb-0">
+                Desenvolvido por <span class="name">Bruno Almeida</span> © 2024
+            </p>
+            
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="./js/api.js"></script>
+    <script src="./js/paginacao.js"></script>
+    <script src="./js/characters.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
